@@ -22,9 +22,11 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         run: terraform init
+        working-directory: src/terraform
 
       - name: Terraform Apply
         id: init
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         run: terraform apply -auto-approve=yes
+        working-directory: src/terraform
