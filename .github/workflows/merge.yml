@@ -28,5 +28,8 @@ jobs:
         id: init
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          TF_VAR_project: crdant-net
+          TF_VAR_region: us-west-1
+          TF_VAR_key_file: ${{ secrets.GOOGLE_CREDENTIALS }}
         run: terraform apply -auto-approve=yes
         working-directory: src/terraform
