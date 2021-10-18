@@ -88,7 +88,7 @@ resource "google_dns_record_set" "cloud_crdant_io_mx" {
   ]
 }
 
-# verification records
+# verification/security records
 resource "google_dns_record_set" "crdant_io_txt" {
   name         = google_dns_managed_zone.crdant_io.dns_name
   managed_zone = google_dns_managed_zone.crdant_io.name
@@ -98,6 +98,17 @@ resource "google_dns_record_set" "crdant_io_txt" {
   rrdatas = [
     "google-site-verification=KHbc9bEc7SGC_UXq_u0cWiUrLI4G_NAlo1XMXmkSZxY",
     "v=spf1 include:_spf.google.com ~all"
+  ]
+}
+
+resource "google_dns_record_set" "crdant_io_caa" {
+  name         = google_dns_managed_zone.crdant_io.dns_name
+  managed_zone = google_dns_managed_zone.crdant_io.name
+  type         = "CAA"
+  ttl          = 300
+ 
+  rrdatas = [
+    "0 issue letsencrypt.org"
   ]
 }
 
