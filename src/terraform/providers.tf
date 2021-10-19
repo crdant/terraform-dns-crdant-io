@@ -1,6 +1,6 @@
 provider "google" {
-  credentials = "${file("${var.key_file}")}"
-  project     = "${var.project}"
+  credentials = fileexists(var.gcp_key) ? file(var.gcp_key) : var.gcp_key
+  project     = var.project
 }
 
 

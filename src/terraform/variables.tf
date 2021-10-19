@@ -2,7 +2,7 @@ variable "project" {
   type = string
 }
 
-variable "key_file" {
+variable "gcp_key" {
   type = string
 }
 
