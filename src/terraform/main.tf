@@ -96,8 +96,8 @@ resource "google_dns_record_set" "crdant_io_txt" {
   ttl          = 300
 
   rrdatas = [
-    "google-site-verification=KHbc9bEc7SGC_UXq_u0cWiUrLI4G_NAlo1XMXmkSZxY",
-    "v=spf1 include:_spf.google.com ~all"
+    "\"google-site-verification=KHbc9bEc7SGC_UXq_u0cWiUrLI4G_NAlo1XMXmkSZxY\"",
+    "\"v=spf1\" \"include:_spf.google.com\" \"~all\""
   ]
 }
 
@@ -108,7 +108,7 @@ resource "google_dns_record_set" "crdant_io_caa" {
   ttl          = 300
 
   rrdatas = [
-    "0 issue letsencrypt.org"
+    "0 issue \"letsencrypt.org\""
   ]
 }
 
