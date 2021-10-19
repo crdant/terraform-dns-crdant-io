@@ -3,7 +3,7 @@ name: "Apply on Merged PR"
 on:
   push:
     branches:
-      - master
+    - main
 
 jobs:
   terraform:
